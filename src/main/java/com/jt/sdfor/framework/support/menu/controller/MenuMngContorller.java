@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MenuMngContorller {
 
 
-    @GetMapping("/ll/menu")
+    @GetMapping("/api/ll/menu/tree")
     public ResponseEntity<? extends IRestResponse> findAll() {
 
-        return RestResponse.of(null);
+        return RestResponse.of(RestResponse.ok());
     }
 }
