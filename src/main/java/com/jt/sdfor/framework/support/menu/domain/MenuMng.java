@@ -19,9 +19,9 @@ public class MenuMng {
     @Column(name = "menu_id", length = 10)
     private String menuId;
 
-    @Comment("상위메뉴ID")
-    @Column(name = "p_menu_id", length = 10, insertable=false, updatable=false)
-    private String pMenuId;
+//    @Comment("상위메뉴ID")
+//    @Column(name = "p_menu_id", length = 10, insertable=false, updatable=false)
+//    private String pMenuId;
 
     @ManyToOne
     @JoinColumn(name = "p_menu_id")
