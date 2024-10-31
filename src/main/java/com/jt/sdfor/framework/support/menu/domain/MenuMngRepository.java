@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface MenuMngRepository extends JpaRepository<MenuMng, String> {
 
-    List<MenuMng> findByParentIsNull();
+    List<MenuMng> findByParentIsNullOrderByListOrderAsc();
 
 }

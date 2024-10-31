@@ -24,10 +24,13 @@ public class MenuQueryDslRepository {
 
     public List<MenuTreeDTO> findAll() {
 
+        QMenuMng childMenu = new QMenuMng("childMenu");
+
         List<MenuMng> menu = queryFactory
                 .selectFrom(menuMng)
-                .leftJoin(menuMng.child).fetchJoin()
+                .leftJoin(menuMng.child, childMenu).fetchJoin()
                 .where(menuMng.parent.isNull())
+                .orderBy(menuMng.listOrder.asc(), childMenu.listOrder.asc())
                 .fetch();
 
         return menu.stream()

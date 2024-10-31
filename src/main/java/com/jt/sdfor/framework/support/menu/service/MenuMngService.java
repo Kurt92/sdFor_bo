@@ -22,7 +22,7 @@ public class MenuMngService {
 //    @Transactional
 //    public List<MenuTreeDTO> findAll() {
 //
-//        List<MenuMng> menuList = menuMngRepository.findByParentIsNull();
+//        List<MenuMng> menuList = menuMngRepository.findByParentIsNullOrderByListOrderAsc();
 //
 //        return menuList.stream()
 //                .map(MenuTreeDTO::new)
