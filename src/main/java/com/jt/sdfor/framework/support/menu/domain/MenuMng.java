@@ -19,11 +19,11 @@ public class MenuMng {
     @Column(name = "menu_id", length = 10)
     private String menuId;
 
-//    @Comment("상위메뉴ID")
-//    @Column(name = "p_menu_id", length = 10, nullable = false)
-//    private String pMenuId;
+    @Comment("상위메뉴ID")
+    @Column(name = "p_menu_id", length = 10, insertable=false, updatable=false)
+    private String pMenuId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "p_menu_id")
     private MenuMng parent;
 
@@ -36,7 +36,7 @@ public class MenuMng {
     private String menuDc;
 
     @Comment("프로그램 코드")
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "prgm_cd")
     private ProgramMng programMng;
 
@@ -44,6 +44,6 @@ public class MenuMng {
     @Column(name = "list_order")
     private Integer listOrder;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
     private final List<MenuMng> child = new ArrayList<>();
 }
