@@ -1,4 +1,4 @@
-package com.jt.sdfor.framework.core.conf;
+package com.jt.sdfor.framework.core.JPAconf;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
